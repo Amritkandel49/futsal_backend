@@ -4,14 +4,6 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' https:;"
-  );
-  next();
-});
-
 const corsOptions = {
   origin: ["https://futsal-frontend-mq4hu9kt7-amritkandel49s-projects.vercel.app", "http://localhost:5173", "http://localhost:8000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -22,6 +14,18 @@ const corsOptions = {
 // app.options("*", cors(corsOptions));
 
 app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' https:;"
+  );
+  next();
+});
+
+
+
+
 
 app.use(cookieParser());
 
