@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
+  origin: ['http://localhost:5173', 'https://futsal-frontend.vercel.app'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: 'Content-Type, Authorization',
   credentials: true,
