@@ -13,13 +13,13 @@ app.use((req, res, next) => {
 });
 
 const corsOptions = {
-  origin: ["https://futsal-frontend-git-main-amritkandel49s-projects.vercel.app", "http://localhost:5173"],
+  origin: ["https://futsal-frontend-git-main-amritkandel49s-projects.vercel.app","https://futsal-frontend.vercel.app/", "http://localhost:5173", "http://localhost:8000"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,
 };
 
-app.options("*", cors(corsOptions));
+// app.options("*", cors(corsOptions));
 
 app.use(cors(corsOptions));
 
